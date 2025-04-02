@@ -1,0 +1,121 @@
+-- Drop tables in the correct order (considering foreign key dependencies)
+DROP TABLE IF EXISTS Orders1;
+DROP TABLE IF EXISTS Product;
+DROP TABLE IF EXISTS Customer;
+DROP TABLE IF EXISTS Registration;
+
+-- Create tables without constraints
+CREATE TABLE Product (
+    item_no NUMERIC(4),
+    ebook_name VARCHAR(30),
+    description VARCHAR(200),
+    image VARCHAR(30),
+    price NUMERIC(9,2),
+    inventory NUMERIC
+);
+
+CREATE TABLE Customer (
+    cc_no NUMERIC(16),
+    exp_mo NUMERIC(2),
+    exp_yr NUMERIC(4),
+    name_first VARCHAR(20),
+    name_last VARCHAR(20),
+    email VARCHAR(20),
+    address1 VARCHAR(50),
+    address2 VARCHAR(50),
+    city VARCHAR(20),
+    state VARCHAR(2),
+    zip NUMERIC(5),
+    country VARCHAR(20),
+    phone VARCHAR(15),
+    fax VARCHAR(15),
+    mail_list NUMERIC(1)
+);
+
+CREATE TABLE Orders1 (
+    item_no NUMERIC(4),
+    cc_no NUMERIC(16),
+    quantity NUMERIC,
+    date_sold DATE
+);
+
+CREATE TABLE Registration (
+    username VARCHAR(16),
+    password VARBINARY(16)
+);
+
+-- Add primary key constraints
+ALTER TABLE Product
+ADD CONSTRAINT pk_product PRIMARY KEY (item_no);
+
+ALTER TABLE Customer
+ADD CONSTRAINT pk_customer PRIMARY KEY (cc_no);
+
+ALTER TABLE Orders1
+ADD CONSTRAINT pk_orders1 PRIMARY KEY (item_no, cc_no, date_sold);
+
+ALTER TABLE Registration
+ADD CONSTRAINT pk_registration PRIMARY KEY (username);
+
+-- Add foreign key constraints
+ALTER TABLE Orders1
+ADD CONSTRAINT fk_orders1_product FOREIGN KEY (item_no) REFERENCES Product(item_no);
+
+ALTER TABLE Orders1
+ADD CONSTRAINT fk_orders1_customer FOREIGN KEY (cc_no) REFERENCES Customer(cc_no);
+
+-- Add not null constraints
+ALTER TABLE Product
+MODIFY item_no NUMERIC(4) NOT NULL,
+MODIFY ebook_name VARCHAR(30) NOT NULL,
+MODIFY description VARCHAR(200) NOT NULL,
+MODIFY image VARCHAR(30) NOT NULL,
+MODIFY price NUMERIC(9,2) NOT NULL,
+MODIFY inventory NUMERIC NOT NULL;
+
+ALTER TABLE Customer
+MODIFY exp_mo NUMERIC(2) NOT NULL,
+MODIFY exp_yr NUMERIC(4) NOT NULL,
+MODIFY name_first VARCHAR(20) NOT NULL,
+MODIFY name_last VARCHAR(20) NOT NULL,
+MODIFY email VARCHAR(20) NOT NULL,
+MODIFY address1 VARCHAR(50) NOT NULL,
+MODIFY city VARCHAR(20) NOT NULL,
+MODIFY state VARCHAR(2) NOT NULL,
+MODIFY zip NUMERIC(5) NOT NULL,
+MODIFY phone VARCHAR(15) NOT NULL,
+MODIFY fax VARCHAR(15) NOT NULL;
+
+ALTER TABLE Orders1
+MODIFY item_no NUMERIC(4) NOT NULL,
+MODIFY cc_no NUMERIC(16) NOT NULL,
+MODIFY quantity NUMERIC NOT NULL,
+MODIFY date_sold DATE NOT NULL;
+
+ALTER TABLE Registration
+MODIFY password VARBINARY(16) NOT NULL;
+
+-- Insert initial rows into Product table (8 products)
+INSERT INTO Product (item_no, ebook_name, description, image, price, inventory)
+VALUES (0, 'Wheat Belly', 'Wheat – The Real Wonder Food for the 21st Century.', 'WheatBelly.jpg', 0.99, 5);
+
+INSERT INTO Product (item_no, ebook_name, description, image, price, inventory)
+VALUES (1, 'Exercise Cure', 'A Doctors All Natiral Solution to Better Health and a Longer Life.', 'NoExercise.jpg', 1.99, 5);
+
+INSERT INTO Product (item_no, ebook_name, description, image, price, inventory)
+VALUES (2, 'What to Expect', 'A Health and Exercise Guide for Expecting Mothers ', 'expect.jpg', 3.99, 5);
+
+INSERT INTO Product (item_no, ebook_name, description, image, price, inventory)
+VALUES (3, 'The First Year', 'A health and exercise guide for mothers in their first year.', 'expect1.jpg', 1.99, 5);
+
+INSERT INTO Product (item_no, ebook_name, description, image, price, inventory)
+VALUES (4, 'Soul Healing', 'A Guide to a Happy and Healthy Life by Basic Lifestyle Changes.  ', 'soul.jpg', 1.99, 5);
+
+INSERT INTO Product (item_no, ebook_name, description, image, price, inventory)
+VALUES (5, 'Daniel Plan', 'A Guide to a Happy and Healthy Life by Basic Lifestyle Changes.  ', 'HealthPlan.jpg', 2.99, 5);
+
+INSERT INTO Product (item_no, ebook_name, description, image, price, inventory)
+VALUES (6, 'Talk to Kids', 'A Guide to Communicating with Your Children', 'talk.jpg', 2.99, 5);
+
+INSERT INTO Product (item_no, ebook_name, description, image, price, inventory)
+VALUES (7, 'Hands Free Mama', 'Become a Multi-Tasking Mama with Less Stress', 'Mama.jpg', 0.99, 5);
