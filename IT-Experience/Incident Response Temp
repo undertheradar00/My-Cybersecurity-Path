@@ -1,6 +1,6 @@
 - Preparation
 This section should include the following informations
-
+------------------------
 List of ALL Assets
 
 Servers
@@ -10,24 +10,19 @@ Applications
 Employees
 Security Products
 
-
+------------------------
 Baselines
 Communication Plan
 Which Security Events
 Thresholds
 How to access Security Tools
-
-How to provision access
-
-
+    How to provision access
+-------------------------------
 Create Playbooks
 Plan Exercises
-
-Table Top
-Hands On
-
-
-
+    Table Top
+    Hands On
+-----------------------------
 
 2- Detection and Analysis
 This section should include the following informations
@@ -37,12 +32,10 @@ Analyzing the Data
 Building Detections
 Root Cause Analysis
 Depth and Breath of the Attack
-
+------------------------------------------
 Admin Rights
 Affected Systems
-
-
-Techniques Used
+    Techniques Used
 Indicators of Compromise / Indicators of Attack
 
 Tactics Techniques and Procdures (TTP)
@@ -51,34 +44,25 @@ Email Address
 File Hash
 Command Line
 etc.
-
-
-
+-------------------------------------------
 
 3- Containment, Eradication, and Recovery
-This section should include the following informations
+This section should include the following information
 
 Isolate Affected Systems
 Patch Threat Entry Point
 Predefine threshold
-
-For Customers
-For internal systems
-For escalations
-
-
+    For Customers
+    For internal systems
+    For escalations
+------------------------------------
 Preauthorized actions
-
-Per customers
-Per environment
-
-Prod
-QA
-Internet Facing
-
-
-
-
+    Per customers
+    Per environment
+          Prod
+          QA
+          Internet Facing
+----------------------------------------
 How to Remove the Threat on All Affected Systems
 Get Systems Operational
 Rebuilt and Resume Service
@@ -92,7 +76,7 @@ New Hardening
 New Patch Management
 etc.
 
-
+------------------------------------------------
 Directory Structures
 
 Customers
@@ -104,18 +88,18 @@ Names
 Phone Number
 Email
 
-
+----------------------------------
 Escalation point
 
 Business hours
 Off Hours
 
-
+----------------------------------
 Account Manager
 Pre-approved Actions and Threshold
 Blackout / Brownout schedule
 
-
+-----------------------------------------
 Products
 This folder contains information about the various "commercial" products we use during an incident.
 For example:
