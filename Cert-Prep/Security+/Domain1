@@ -1,0 +1,23 @@
+Domain 1
+1.1 - Differentiate Among Various Systems Security Threats
+
+  Privilege Escalation: Gaining higher access than allowed (e.g., user to admin). Look for a story—like a hacker exploiting a bug to “own” a system.
+  Virus: Self-replicating code that infects files. Note how it spreads (e.g., email attachments).
+  Worm: Like a virus but spreads solo across networks. Think “WannaCry” (2017, but still referenced).
+  Trojan: Malware disguised as legit software (e.g., a fake game). Spot the “trickery” angle.
+  Spyware: Steals data (e.g., keyloggers). Look for how it hides.
+  Spam: Unsolicited emails, often a malware delivery tool. Simple but nasty.
+  Adware: Pop-up ads with a side of tracking. Annoying but risky.
+  Rootkits: Deep-hiding malware that controls systems. Note “stealth” as the keyword.
+  Botnets: Armies of infected devices (e.g., for DDoS). Picture a zombie apocalypse.
+  Logic Bomb: Malware triggered by an event (e.g., date). Rare but sneaky.
+
+1.2 - Explain the Security Risks Pertaining to System Hardware and Peripherals
+  BIOS: Firmware attacks (e.g., rewriting BIOS to install malware). Look for “boot process” risks.
+  USB Devices: Plug-and-play danger (e.g., USB drops with malware). Real-world vibe—think parking lot traps.
+  Cell Phones: Mobile threats (e.g., apps stealing data). Ties to your daily tech.
+  Removable Storage: Think infected USB sticks or external drives.
+  Network Attached Storage (NAS): Home servers hacked via weak passwords.
+	
+
+
